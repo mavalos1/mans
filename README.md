@@ -79,3 +79,5 @@ Component guidelines:
 ## 🚀 Deployment
 
 Checkout the deployment guides for [Vercel](https://vercel.com/docs/concepts/deployments/overview)
+
+Current live deployment: https://mans-nine.vercel.app/
