@@ -1,0 +1,62 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+        "project": "."
+      }
+    }
+  },
+  "rules": {
+    // eslint/prettier
+    "object-shorthand": ["warn"],
+    "prettier/prettier": ["warn"],
+
+    // react
+    "react/display-name": "off",
+    "react/self-closing-comp": "error",
+
+    // typescript
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-empty-function": "off",
+
+    // import
+    "@typescript-eslint/consistent-type-imports": "error",
+    "import/no-duplicates": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "type",
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["type"],
+        "newlines-between": "always"
+      }
+    ]
+  }
+}
