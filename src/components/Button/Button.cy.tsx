@@ -50,7 +50,6 @@ describe("Button", () => {
   it("should be focusable & tabbable", () => {
     mount(<MansButton data-testid="basic-button">Button</MansButton>);
 
-    cy.bodyFocus();
     cy.realPress("Tab");
     cy.findByTestId("basic-button")
       .should("be.visible")
